@@ -487,12 +487,12 @@ AS
 	SET @borrowed = (count(tbl_loans.loan_card_no) FROM tbl_loans WHERE 
 
 
-	SELECT warning.borrower_name, warning.borrower_address (SELECT 
+	SELECT 
 	a2.borrower_name, a2.borrower_address, count(*) AS 'Borrowed Book Count:'
 	From tbl_loans a1
 	LEFT JOIN tbl_borrowers a2 ON a2.borrower_card_no = a1.loan_card_no 
 	GROUP BY a2.borrower_address , a2.borrower_name 
-	) warning
+
 
 
 
